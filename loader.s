@@ -18,14 +18,13 @@
         dd FLAGS                    ; the flags,
         dd CHECKSUM                 ; and the checksum
 
-    loader:                         			; the loader label (defined as entry point in linker script)
+    loader:                         			; the loader label 
     mov esp, kernel_stack + KERNEL_STACK_SIZE   	; point esp to the start of the
                                                 	; stack (end of memory area)
         
         
-    ; The assembly code
-    extern main   		           ; the main function is defined elsewhere
-    call main                             ; call the function, the result will be in eax
+    extern kmain   		           ; the main function is defined elsewhere
+    call kmain                             ; call the function, the result will be in eax
     
     
     .loop:
