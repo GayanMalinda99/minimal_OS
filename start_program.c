@@ -8,7 +8,7 @@ void run_custom_program(unsigned int ebx){
 	multiboot_info_t *mbinfo = (multiboot_info_t *) ebx;
 	
 	if(mbinfo->mods_count == 0){
-		char consoleOut[]="Error: no module loaded";
+		char consoleOut[]="Error: No module loaded";
 		fb_write(consoleOut, sizeof(consoleOut));
          
         /*the program will only be executed if the number of loaded programs equal to one*/
@@ -25,7 +25,7 @@ void run_custom_program(unsigned int ebx){
 	    	/* we'll never get here, unless the module code returns */    
 	    		
 	}else{
-	    	char consoleOut[]="Error: multiplt modules loaded";
+	    	char consoleOut[]="Error: Multiplt modules loaded";
 	    	fb_write(consoleOut, sizeof(consoleOut));
 	    	
 	}
