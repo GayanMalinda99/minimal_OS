@@ -1,5 +1,5 @@
 #include "paging.h"
-#include "serial_port.h" // pour afficher un msg
+#include "serial_port.h" 
 
 
 
@@ -41,6 +41,6 @@ void init_paging() {
 }
 
 void page_fault() {
-	char msg[]= "Page Error";
-	serial_write( msg, sizeof(msg));
+	char message[]= "Page Fault";
+	serial_write(0x3F8,message,sizeof(message));
 }

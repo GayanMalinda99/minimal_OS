@@ -45,6 +45,7 @@ common_interrupt_handler:               ; the common parts of the generic interr
 	; return to the code that got interrupted
 	iret
 
-no_error_code_interrupt_handler	33	; create handler for interrupt 1 (keyboard)
+no_error_code_interrupt_handler 33	; create handler for interrupt 1 (keyboard)
 no_error_code_interrupt_handler 14	; create handler for interrupt 2 (paging)
-   
+
+

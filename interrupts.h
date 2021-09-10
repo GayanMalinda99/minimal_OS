@@ -46,4 +46,3 @@ void interrupt_handler(struct cpu_state cpu, unsigned int interrupt, struct stac
 
 
 #endif /* INCLUDE_INTERRUPTS */
-
