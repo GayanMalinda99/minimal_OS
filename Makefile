@@ -1,7 +1,7 @@
-    OBJECTS = loader.o kmain.o io.o framebuffer.o serial_port.o memory_segments.o gdt.o idt.o pic.o keyboard.o interrupt_handlers.o interrupts.o start_program.o paging_enable.o paging.o kheap.o
+OBJECTS = loader.o kmain.o io.o frame_buffer.o serial_port.o gdt.o memory_seg.o idt.o interrupt_handlers.o interrupts.o keyboard.o pic.o start_program.o paging_enable.o paging.o kheap.o
     CC = gcc
     CFLAGS = -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector \
-             -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c
+             -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c -masm=intel
     LDFLAGS = -T link.ld -melf_i386
     AS = nasm
     ASFLAGS = -f elf
@@ -35,3 +35,5 @@
 
     clean:
 	rm -rf *.o kernel.elf os.iso
+
+

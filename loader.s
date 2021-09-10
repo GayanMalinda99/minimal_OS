@@ -1,4 +1,4 @@
-    global loader                   ; the entry symbol for ELF
+global loader                   ; the entry symbol for ELF
     
     extern kmain   		     ; the main function is defined elsewhere
 
