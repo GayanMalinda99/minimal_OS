@@ -1,3 +1,5 @@
+			   ;Load the Global Descriptor Table
+
 global segments_load_gdt
 global segments_load_registers
 
@@ -7,7 +9,7 @@ segments_load_gdt:
 
 segments_load_registers:
 	mov ax, 0x10
-	mov ds, ax ; 0x10 - an offset into GDT for the third (kernel data segment) record.
+	mov ds, ax        ; 0x10 - an offset into GDT for the third (kernel data segment) record.
 	mov ss, ax
 	mov es, ax
 	mov fs, ax
@@ -16,3 +18,4 @@ segments_load_registers:
 
 flush_cs:
 	ret
+	

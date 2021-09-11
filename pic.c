@@ -1,18 +1,7 @@
 #include "io.h"
 #include "pic.h"
 
-/*
-        Programmable Interrupt Controller
-	From: http://wiki.osdev.org/PIC
-	Reinitialize the PIC controllers, giving them specified vector offsets
-	rather than 8h and 70h, as configured by default.
-*/
-
-/**
-  *  Acknowledges an interrupt from either PIC 1 or PIC 2.
-  *
-  *  @param num The number of the interrupt
-  */
+//Acknowledging a PIC interrupt is done by sending the byte 0x20 to the PIC that raised the interrupt
 void pic_acknowledge(unsigned int interrupt)
 {
 	if (interrupt < PIC_1_OFFSET || interrupt > PIC_2_END) {
@@ -29,8 +18,7 @@ void pic_acknowledge(unsigned int interrupt)
 /*
 arguments:
 	offset1 - vector offset for master PIC
-		vectors on the master become offset1..offset1+7
-	offset2 - same for slave PIC: offset2..offset2+7
+	offset2 - same for second PIC
 */
 void pic_remap(int offset1, int offset2)
 {

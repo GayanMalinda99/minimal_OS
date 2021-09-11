@@ -18,6 +18,7 @@
 /* Frame buffer base address */
 #define FB_BASE_ADDRESS 0xB8000
 
+int fb_write(char *buf, unsigned int len);
 /** outb:
  *  Sends the given data to the given I/O port. Defined in io.s
  *
@@ -50,6 +51,6 @@ void fb_write_cell(unsigned int i, char c, unsigned char fg, unsigned char bg);
  *  @param buf  Buffer that has contents to be written to screen
  *  @param len  Length of buffer
  */
-int fb_write(char *buf, unsigned int len);
+
 
 #endif /* INCLUDE_IO_H */

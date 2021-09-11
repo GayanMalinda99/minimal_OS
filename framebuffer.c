@@ -23,10 +23,10 @@ void fb_move_cursor(unsigned short pos) {
  *  @param fg The foreground color
  *  @param bg The background color
  */
-void fb_write_cell(unsigned int i, char c, unsigned char fg, unsigned char bg) {
-  fb[2 * i] = c;
-  fb[2 * i + 1] = ((fg & 0x0F) << 4) | (bg & 0x0F);
-}
+void fb_write_cell(unsigned int i, char c, unsigned char fg, unsigned char bg){
+        fb[2*i] = c;
+        fb[2*i + 1] = ((fg & 0x0F) << 4) | (bg & 0x0F);
+ }
 
 int fb_write(char *buf, unsigned int len) {
   unsigned int indexToBuffer = 0;
