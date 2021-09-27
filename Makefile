@@ -2,6 +2,7 @@ OBJECTS = loader.o kmain.o io.o framebuffer.o serial_port.o gdt.o segmentation.o
 CC = gcc
 CFLAGS = -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector \
              -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c
+             
 LDFLAGS = -T link.ld -melf_i386
 AS = nasm
 ASFLAGS = -f elf

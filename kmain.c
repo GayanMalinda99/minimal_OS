@@ -29,8 +29,6 @@ int kmain(multiboot_info_t *mbinfo, u32int kernel_physical_start, u32int kernel_
       segments_install_gdt();
     //Initialize idt
       interrupts_install_idt();
-    // Switch to User mode
-      switch_to_user_mode();
     
     
    return 0; 
